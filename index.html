@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>calculator</title>
+<style>
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+header{
+margin-top: 3rem;
+}
+nav{
+display: flex;
+justify-content: space-between;
+margin: 0 auto;
+max-width: 25%;
+background-color: #f3f3f3;
+height: 3.5rem;
+padding: .7rem;
+
+}
+.img--box{
+display: flex;
+align-items: center;
+}
+.icons{
+display: flex;
+column-gap: .8rem ;
+align-items: center;
+
+
+}
+.header-attachment-inner{
+background-color: #f3f3f3;
+min-height: 70vh;
+margin: 0 auto;
+max-width:25% ;
+box-shadow: 0px .30px 0px 0px ;
+}
+.controls-all{
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: space-between;
+padding: .1rem;
+padding-top: 1rem;
+margin-top: -1.5rem;
+}
+.controls{
+display: flex;
+align-items: center;
+column-gap: .4rem;
+padding: .7rem;
+}
+.controls p{
+font-size: 900;
+font-size: 24px;
+}
+.minus img:hover{
+border:4px solid  #f3f3f36f;
+box-shadow:0px .20px 0 .2px ;
+
+}
+.delete{
+    width: 2rem;
+    height: 2rem;
+}
+.delete:hover{
+    background-color: red;
+    max-width:9rem;
+   
+}
+.delete img:hover{
+color: white;
+color: #f3f3f36f;
+}
+.buttons{
+display: grid;
+grid-template-columns: repeat(4,1fr);
+margin-top: 5.5rem;
+padding: .5rem;
+column-gap: .5rem;
+row-gap: .5rem;
+
+
+}
+.buttons button{
+height: 3.5rem;
+width: 100%;
+border: none;
+background-color: white;
+box-shadow: 0px 0 1px .1px;
+border-radius: 2px;
+
+}
+.buttons button a{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.btn-1{
+display: grid;
+grid-template-columns: repeat(6,1fr);
+transform: translateY(5rem);
+margin-top: -3.5rem;
+
+
+}
+.btn-1 a{
+    font-size: 16px;
+}
+.btn-1 button{
+border: none;
+padding: .3rem;
+text-align: center;
+
+}
+#equal{
+    background-color:rgb(9, 186, 246);
+    border-radius: 3px;
+
+}
+#equal a{
+    color: white;
+    font-size: 19px;
+
+}
+input{
+  text-align: right;
+  background-color: transparent;
+  margin: 0 auto;
+  width: 96%;
+  border-style: none;
+  border: none;
+  outline: none;
+  font-size: 1.7rem;
+  font-weight: 900;
+
+
+}
+#show2{
+text-align: end;
+margin-right: 1rem;
+margin-bottom: .7rem;
+
+ 
+
+}
+input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+
+
+}
+@media only screen and (max-width:1312px){
+    .header-attachment-inner{
+        max-width: 30%;
+    }
+    nav{
+        max-width: 30%;  
+        margin-bottom: 1.58rem;
+    }
+}
+@media only screen and (max-width:980px){
+    .header-attachment-inner{
+        max-width: 35%;
+    }
+    nav{
+        max-width: 35%;  
+    }
+}
+@media only screen and (max-width:870px){
+    .header-attachment-inner{
+        max-width: 40%;
+    }
+    nav{
+        max-width:40%;  
+    }
+}
+@media only screen and (max-width:750px){
+    .header-attachment-inner{
+        max-width: 45%;
+    }
+    nav{
+        max-width: 45%;  
+    }
+}
+@media only screen and (max-width:640px){
+    .header-attachment-inner{
+        max-width: 50%;
+    }
+    nav{
+        max-width: 50%;  
+    }
+}
+@media only screen and (max-width:540px){
+    .header-attachment-inner{
+        max-width: 60%;
+    }
+    nav{
+        max-width: 60%;  
+    }
+
+}
+@media only screen and (max-width:412px){
+    .header-attachment-inner{
+        max-width: 70%;
+    }
+    nav{
+        max-width: 70%;  
+    }
+}
+@media only screen and (max-width:390px){
+    .header-attachment-inner{
+        max-width: 90%;
+    }
+    nav{
+        max-width: 90%;  
+        margin-bottom: 1.4rem;
+    }
+    body{
+        background-color: black;
+    }
+
+}
+@media only screen and (max-width:340px){
+    .header-attachment-inner{
+        max-width: 96%;
+    }
+    nav{
+        max-width: 96%;  
+    }
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img--box">
+                <div class="img-box">
+                    <img src="img/cal.PNG" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Calculator</p>
+                    </div>
+            </div>
+            <div class="icons">
+                <div class="minus">
+                    <img src="img/minus.PNG" alt="">
+                </div>
+                <div class="box"><img src="img/box.PNG" alt=""></div>
+                <div class="delete">
+                    <img src="img/cancel-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="header-attachment">
+        <div class="header-attachment-inner">
+           <div class="controls-all">
+            <div class="controls">
+                <div class="hambouger">
+                    <img src="img/ham.PNG" alt="">
+                </div>
+                <div class="text">
+                    <p><strong>Standard</strong></p>
+                </div>
+                <div class="screen">
+                    <img src="img/screen.PNG" alt="">
+                </div>
+               </div>
+              <div class="controls2">
+                <img src="img/reload.PNG" alt="">
+              </div>
+           </div>
+           <p id="show2"></p>
+           <div class="show">
+                <input type="number"  id="show" placeholder="0" readonly>
+                </div>
+           <div class="btn-1">
+            <button ><a>MC</a></button>
+            <button><a>MR</a></button>
+            <button><a>M+</a></button>
+            <button ><a>M-</a></button>
+            <button><a>MS</a></button>
+            <button><a>M</a></button>
+           </div>
+           <div class="buttons">
+            <button onclick="operatorBtn('%') "><a>%</a></button>
+            <button onclick="btnClear1()"><a>CE</a></button>
+            <button onclick="btnClear()"><a>C</a></button>
+            <button  onclick="backSpace()"><a>⨂</a></button>
+            <button><a>⅟x</a></button>
+            <button><a>x²</a></button>
+            <button><a>²¬x</a></button>
+            <button onclick="operatorBtn('÷') "><a>÷</a></button>
+            <button onclick="displayValue('7')"><a>7</a></button>
+            <button onclick="displayValue('8')"><a>8</a></button>
+            <button onclick="displayValue('9')"><a>9</a></button>
+            <button onclick="operatorBtn('*') "><a>×</a></button>
+            <button onclick="displayValue('4')"><a>4</a></button>
+            <button onclick="displayValue('5')"><a>5</a></button>
+            <button onclick="displayValue('6')"><a>6</a></button>
+            <button onclick="operatorBtn('-')"><a>-</a></button>
+            <button onclick="displayValue('1')"><a>1</a></button>
+            <button onclick="displayValue('2')"><a>2</a></button>
+            <button onclick="displayValue('3')"><a>3</a></button>
+            <button onclick="operatorBtn('+')"><a>+</a></button>
+            <button><a>+⁄–</a></button>
+            <button onclick="displayValue1('0') " id="btn"><a>0</a></button>
+            <button onclick="dott('.')" id="full"><a>.</a></button>
+            <button onclick="displayValue3('=')" id="equal"><a>=</a></button>
+           </div>
+        </div>
+    </div>
+</body>
+<script>
+    let show=document.getElementById('show')
+    let show2=document.getElementById('show2')
+    let full=document.getElementById('full')
+    let currentValue=''
+    let operators=''
+    let backSpace1=''
+   function displayValue(number){
+    
+    show.value+=number
+   
+    console.log(show.value)
+ }
+ function displayValue1(number){
+    if (show.value===number) {
+        show.value=''
+        
+        }
+    else{
+        show.value+=number
+        console.log(show.value);
+    }
+ }
+ function operatorBtn(operator){
+    currentValue=show.value
+    operators = operator
+    show2.innerHTML = show.value + operators
+    show2.hidden=false
+    return show.value=''
+ }
+ function btnClear(){
+    show.value=''
+    show2.hidden=true
+ }
+ function btnClear1(){
+    show.value=''
+ }
+ function backSpace(){
+    show.value=show.value.slice(0,-1)
+
+ }
+ function dott(stop){
+    parseInt(show.value+=stop)
+
+    
+
+ }
+ function displayValue3(equal){
+    show2.innerHTML=currentValue + operators + show.value+equal
+    if (operators == '+') {
+     show.value=(Number(currentValue) + Number(show.value) );
+        
+    }
+    else if (operators =='-') {
+     show.value= currentValue-show.value;
+
+        
+    }
+    else if (operators =='*') {
+     show.value= currentValue*show.value;
+        
+    }
+    else if (operators =='÷') {
+     show.value= currentValue / show.value;
+        
+    }
+    else if (operators =='/') {
+     show.value= currentValue / show.value;
+        
+    }
+    else if (operators =='%') {
+     show.value= currentValue % show.value;
+        
+    }
+ } 
+
+</script>
+</html>
