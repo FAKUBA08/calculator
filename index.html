@@ -397,15 +397,11 @@
      show.value= currentValue / show.value;
         
     }
-    else if (operators =='/') {
-     show.value= currentValue / show.value;
+     else if(operators =='%') {
+     show.value= currentValue *(1/100);
+     show2.innerHTML=currentValue + operators
         
-    }
-    else if (operators =='%') {
-     show.value= currentValue % show.value;
-        
-        
-    }
+}
     else{
         alert('error')
         show.value=('invalid operator')  
