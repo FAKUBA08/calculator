@@ -292,7 +292,7 @@
            </div>
            <p id="show2"></p>
            <div class="show">
-                <input type="number"  id="show" placeholder="0" readonly>
+                <input type="text"  id="show" placeholder="0" readonly>
                 </div>
            <div class="btn-1">
             <button ><a>MC</a></button>
@@ -325,7 +325,7 @@
             <button onclick="operatorBtn('+')"><a>+</a></button>
             <button><a>+⁄–</a></button>
             <button onclick="displayValue1('0') " id="btn"><a>0</a></button>
-            <button onclick="dott('.')" id="full"><a>.</a></button>
+            <button onclick="displayValue('.')" id="full"><a>.</a></button>
             <button onclick="displayValue3('=')" id="equal"><a>=</a></button>
            </div>
         </div>
@@ -334,7 +334,7 @@
 <script>
     let show=document.getElementById('show')
     let show2=document.getElementById('show2')
-    let full=document.getElementById('full')
+    // let full=document.getElementById('full')
     let currentValue=''
     let operators=''
     let backSpace1=''
@@ -378,12 +378,6 @@
     show.value=show.value.slice(0,-1)
 
  }
- function dott(stop){
-    parseInt(show.value+=stop)
-
-    
-
- }
  function displayValue3(equal){
     show2.innerHTML=currentValue + operators + show.value+equal
     if (operators == '+') {
@@ -409,6 +403,7 @@
     }
     else if (operators =='%') {
      show.value= currentValue % show.value;
+        
         
     }
     else{
