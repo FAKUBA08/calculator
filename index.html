@@ -138,7 +138,7 @@
     border: none;
     outline: none;
     font-size: 1.7rem;
-    font-weight: 700;
+    font-weight: 7 00;
 
 
     }
@@ -338,7 +338,13 @@
     let currentValue=''
     let operators=''
     let backSpace1=''
+    canClear=false
    function displayValue(number){
+    if (canClear) {
+        show.value=''
+        canClear=false
+        
+    }
     
     show.value+=number
    
@@ -359,7 +365,7 @@
     operators = operator
     show2.innerHTML = show.value + operators
     show2.hidden=false
-    return show.value=''
+    canClear=true
  }
  function btnClear(){
     show.value=''
@@ -404,6 +410,10 @@
     else if (operators =='%') {
      show.value= currentValue % show.value;
         
+    }
+    else{
+        alert('error')
+        show.value=('invalid operator')  
     }
  } 
 
